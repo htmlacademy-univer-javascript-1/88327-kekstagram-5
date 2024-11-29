@@ -7,11 +7,11 @@ function isPalindrom(str){
   str = str.replaceAll(/\s/g, '').toLowerCase();
   let checkStr = '';
 
-  for (let i = str.length-1; i >= 0 ; i-- ){
+  for (let i = str.length-1; i >= 0 ; i --){
     checkStr += str[i];
   }
 
-  return checkStr == str;
+  return checkStr === str;
 }
 
 function getNumbersFromString(str){
