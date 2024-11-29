@@ -7,7 +7,7 @@ function isPalindrom(str){
   str = str.replaceAll(/\s/g, '').toLowerCase();
   let checkStr = '';
 
-  for (let i = str.length-1; i >= 0 ; i --){
+  for (let i = str.length - 1; i >= 0 ; i--){
     checkStr += str[i];
   }
 
@@ -17,17 +17,17 @@ function isPalindrom(str){
 function getNumbersFromString(str){
 
   str = str.toString().replaceAll(/\D/g, '').toLowerCase();
-  str = parseInt(str);
+  str = parseInt(str, 10);
   return str;
 
 }
 
 console.log(checkStringLength('Абдулнасир', 9));
-console.log(checkStringLength( 'Абдулнасир', 10));
-console.log(checkStringLength( 'Абдулнасир', 13));
+console.log(checkStringLength('Абдулнасир', 10));
+console.log(checkStringLength('Абдулнасир', 13));
 
-console.log(isPalindrom( '-saippuak  ivikaUpp ias-'));
-console.log(isPalindrom( 'asdassasdasxc'));
+console.log(isPalindrom('-saippuak  ivikaUpp ias-'));
+console.log(isPalindrom('asdassasdasxc'));
 
 console.log(getNumbersFromString('2023 год'));            // 2023
 console.log(getNumbersFromString('ECMAScript 2022'));     // 2022
