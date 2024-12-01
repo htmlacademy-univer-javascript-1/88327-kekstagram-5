@@ -3,35 +3,33 @@ function checkStringLength(str, count){
 }
 
 function isPalindrom(str){
-
-  str = str.replaceAll(/\s/g, '').toLowerCase();
+  let normalizedStr = '';
+  normalizedStr = str.replaceAll(/\s/g, '').toLowerCase();
   let checkStr = '';
 
-  for (let i = str.length - 1; i >= 0 ; i--){
-    checkStr += str[i];
+  for (let i = normalizedStr.length - 1; i >= 0 ; i--){
+    checkStr += normalizedStr[i];
   }
 
-  return checkStr === str;
+  return checkStr === normalizedStr;
 }
 
 function getNumbersFromString(str){
-
-  str = str.toString().replaceAll(/\D/g, '').toLowerCase();
-  str = parseInt(str, 10);
-  return str;
-
+  let normalizedStr = '';
+  normalizedStr = str.toString().replaceAll(/\D/g, '').toLowerCase();
+  return parseInt(normalizedStr, 10);
 }
 
 checkStringLength('Абдулнасир', 9);
 isPalindrom('-saippuak  ivikaUpp ias-');
 getNumbersFromString('2023 год');
 
-// console.log(checkStringLength('Абдулнасир', 9));
-// console.log(checkStringLength('Абдулнасир', 10));
-// console.log(checkStringLength('Абдулнасир', 13));
+// console.log(checkStringLength('Абдулнасир', 9)); //false
+// console.log(checkStringLength('Абдулнасир', 10)); //true
+// console.log(checkStringLength('Абдулнасир', 13)); //true
 
-// console.log(isPalindrom('-saippuak  ivikaUpp ias-'));
-// console.log(isPalindrom('asdassasdasxc'));
+// console.log(isPalindrom('-saippuak  ivikaUpp ias-')); //true
+// console.log(isPalindrom('asdassasdasxc')); // false
 
 // console.log(getNumbersFromString('2023 год')); // 2023
 // console.log(getNumbersFromString('ECMAScript 2022')); // 2022
