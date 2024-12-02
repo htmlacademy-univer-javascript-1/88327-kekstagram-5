@@ -3,10 +3,8 @@ function checkStringLength(str, count){
 }
 
 function isPalindrom(str){
-  let normalizedStr = '';
-  normalizedStr = str.replaceAll(/\s/g, '').toLowerCase();
+  let normalizedStr = str.replaceAll(/\s/g, '').toLowerCase();
   let checkStr = '';
-
   for (let i = normalizedStr.length - 1; i >= 0 ; i--){
     checkStr += normalizedStr[i];
   }
@@ -15,8 +13,7 @@ function isPalindrom(str){
 }
 
 function getNumbersFromString(str){
-  let normalizedStr = '';
-  normalizedStr = str.toString().replaceAll(/\D/g, '').toLowerCase();
+  let normalizedStr = str.toString().replaceAll(/\D/g, '').toLowerCase();
   return parseInt(normalizedStr, 10);
 }
 
