@@ -11,7 +11,7 @@ function generateData(){
     const commentsCount = getRndInteger(0, 15);
     for(let j = 0; j <= commentsCount; j++){
       const comment = {};
-      comment.id = i*100 + j;
+      comment.id = i * 100 + j;
       comment.avatar = `img/avatar-${getRndInteger(1, 6)}.svg`;
       comment.name = getName();
       comment.message = getMessage();
@@ -59,9 +59,9 @@ function getName(){
 }
 
 function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) ) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 
-let data = generateData()
+const data = generateData();
 // console.log( data )
