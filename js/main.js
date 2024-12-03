@@ -9,7 +9,7 @@ function generateData(){
     item.comments = [];
     const commentsCount = getRndInteger(0, 15);
     for(let j = 0; j <= commentsCount; j++){
-      item.comments.push( generateCommentData() );
+      item.comments.push(generateCommentData());
     }
     res.push(item);
   }
@@ -25,7 +25,7 @@ function generatePhotoData(){
     url: `photos/${photoId}.jpg`,
     description: `Фотография #${photoId}`,
     likes: getRndInteger(15, 200)
-  }
+  };
 
   photoId++;
 
@@ -39,7 +39,7 @@ function generateCommentData(){
     avatar: `img/avatar-${getRndInteger(1, 6)}.svg`,
     name: getName(),
     message: getMessage()
-  }
+  };
   commentId++;
   return res;
 
@@ -83,6 +83,6 @@ function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// generateData();
-const data = generateData();
-console.log( data )
+generateData();
+// const data = generateData();
+// console.log( data )
