@@ -1,25 +1,46 @@
+let photoId = 1;
+let commentId = 1;
+
 function generateData(){
 
   const res = [];
   for(let i = 1; i <= 25; i++){
-    const item = {};
-    item.id = i;
-    item.url = `photos/${i}.jpg`;
-    item.description = `Фотография #${i}`;
-    item.likes = getRndInteger(15, 200);
+    const item = generatePhotoData();
     item.comments = [];
     const commentsCount = getRndInteger(0, 15);
     for(let j = 0; j <= commentsCount; j++){
-      const comment = {};
-      comment.id = i * 100 + j;
-      comment.avatar = `img/avatar-${getRndInteger(1, 6)}.svg`;
-      comment.name = getName();
-      comment.message = getMessage();
-      item.comments.push(comment);
+      item.comments.push( generateCommentData() );
     }
     res.push(item);
   }
 
+  return res;
+
+}
+
+function generatePhotoData(){
+
+  const res = {
+    id: photoId,
+    url: `photos/${photoId}.jpg`,
+    description: `Фотография #${photoId}`,
+    likes: getRndInteger(15, 200)
+  }
+
+  photoId++;
+
+  return res;
+}
+
+function generateCommentData(){
+
+  const res = {
+    id: commentId,
+    avatar: `img/avatar-${getRndInteger(1, 6)}.svg`,
+    name: getName(),
+    message: getMessage()
+  }
+  commentId++;
   return res;
 
 }
@@ -62,6 +83,6 @@ function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-generateData();
-// const data = generateData();
-// console.log( data )
+// generateData();
+const data = generateData();
+console.log( data )
