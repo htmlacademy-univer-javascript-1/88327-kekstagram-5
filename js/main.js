@@ -1,3 +1,4 @@
+
 import {config} from './config.js';
 import {getRndInteger} from './tools.js';
 
@@ -50,6 +51,7 @@ function generateCommentData(){
 
 function getMessage(){
   const res = [];
+
   const messageCount = getRndInteger(0, 1);
   for(let i = 0; i <= messageCount; i++){
     res.push(config.mock.messages[getRndInteger(0, config.mock.messages.length)]);
@@ -58,9 +60,10 @@ function getMessage(){
 }
 
 function getName(){
+
   return config.mock.names[getRndInteger(0, config.mock.names.length)];
 }
 
-// generateData();
-const data = generateData();
-console.log( data )
+generateData();
+// const data = generateData();
+// console.log( data )
