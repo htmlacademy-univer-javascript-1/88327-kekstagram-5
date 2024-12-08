@@ -66,4 +66,4 @@ function getName(){
 
 generateData();
 // const data = generateData();
-// console.log( data )
+// console.log( data );
